@@ -1,0 +1,22 @@
+plugins {
+    id 'java-library'
+}
+
+group = 'ru.oriabenko'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation(
+            "com.codeborne:selenide:7.4.0",
+            "org.junit.jupiter:junit-jupiter:5.10.3",
+            'org.slf4j:slf4j-simple:2.0.13'
+    )
+}
+
+test {
+    useJUnitPlatform()
+}
