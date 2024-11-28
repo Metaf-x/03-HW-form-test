@@ -46,7 +46,7 @@ public class StudentRegistrationFormTests {
         $("#subjectsInput").setValue("Computer Science").pressTab();
 
         //checkbox, scroll to view
-        $("#hobbies-checkbox-1 + .custom-control-label").scrollIntoView(true).click();
+        $("#hobbies-checkbox-1 + .custom-control-label").click();
 
         //file upload
         $("#uploadPicture").uploadFile(new File("src/test/resources/test-img.jpg"));
@@ -90,6 +90,6 @@ public class StudentRegistrationFormTests {
         $$(resultCellSelector).findBy(text("Address")).sibling(0).shouldHave(text("17926 Eleanora Islands"));
         $$(resultCellSelector).findBy(text("State and City")).sibling(0).shouldNotBe(empty);
 
-
+//      sleep(600_000);
     }
 }
