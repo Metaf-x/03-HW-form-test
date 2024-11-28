@@ -18,12 +18,18 @@ public class StudentRegistrationFormTests {
         Configuration.browserSize = "1920x720";
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.pageLoadStrategy = "eager";
+
+
     }
 
 
     @Test
     void fillFormTest() {
         open("/automation-practice-form");
+
+        //remove ad banners
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
 
         //text input
         $("#firstName").setValue("Jane");
