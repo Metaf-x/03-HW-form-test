@@ -19,10 +19,7 @@ public class StudentRegistrationFormTests {
         Configuration.browserSize = "1920x720";
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.pageLoadStrategy = "eager";
-
-
     }
-
 
     @Test
     void fillFormTest() {
@@ -70,10 +67,8 @@ public class StudentRegistrationFormTests {
         //submit btn
         $("#submit").click();
 
-
         //success message for sent form
         $(".modal-dialog .modal-title").shouldHave(text("Thanks for submitting the form"));
-
 
         //result table
         //check for value if specific value is provided
