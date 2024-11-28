@@ -6,8 +6,6 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
 
-import java.io.File;
-
 import static com.codeborne.selenide.Condition.empty;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
@@ -47,7 +45,7 @@ public class StudentRegistrationFormTests {
         $("#hobbies-checkbox-1 + .custom-control-label").click();
 
         //file upload
-        $("#uploadPicture").uploadFile(new File("src/test/resources/test-img.jpg"));
+        $("#uploadPicture").uploadFromClasspath("test-img.jpg");
 
         //textarea
         $("#currentAddress").setValue("17926 Eleanora Islands");
