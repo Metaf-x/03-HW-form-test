@@ -1,6 +1,7 @@
 package tests;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.ElementsCollection;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
@@ -76,19 +77,20 @@ public class StudentRegistrationFormTests {
 
         //result table
         //check for value if specific value is provided
-        //check if empty if no specific value is provided
-        String resultCellSelector = ".table > tbody > tr > td";
-        $$(resultCellSelector).findBy(text("Student Name")).sibling(0).shouldHave(text("Jane"));
-        $$(resultCellSelector).findBy(text("Student Name")).sibling(0).shouldHave(text("Doe"));
-        $$(resultCellSelector).findBy(text("Student Email")).sibling(0).shouldHave(text("jana@test.com"));
-        $$(resultCellSelector).findBy(text("Gender")).sibling(0).shouldNotBe(empty);
-        $$(resultCellSelector).findBy(text("Mobile")).sibling(0).shouldHave(text("1234567890"));
-        $$(resultCellSelector).findBy(text("Date of Birth")).sibling(0).shouldHave(text("04 May,2014"));
-        $$(resultCellSelector).findBy(text("Subjects")).sibling(0).shouldHave(text("Chemistry, Computer Science"));
-        $$(resultCellSelector).findBy(text("Hobbies")).sibling(0).shouldNotBe(empty);
-        $$(resultCellSelector).findBy(text("Picture")).sibling(0).shouldNotBe(empty);
-        $$(resultCellSelector).findBy(text("Address")).sibling(0).shouldHave(text("17926 Eleanora Islands"));
-        $$(resultCellSelector).findBy(text("State and City")).sibling(0).shouldNotBe(empty);
+        //check if not empty if no specific value is provided
+
+        ElementsCollection resultCellSelector = $$(".table > tbody > tr > td");
+        resultCellSelector.findBy(text("Student Name")).sibling(0).shouldHave(text("Jane"));
+        resultCellSelector.findBy(text("Student Name")).sibling(0).shouldHave(text("Doe"));
+        resultCellSelector.findBy(text("Student Email")).sibling(0).shouldHave(text("jana@test.com"));
+        resultCellSelector.findBy(text("Gender")).sibling(0).shouldNotBe(empty);
+        resultCellSelector.findBy(text("Mobile")).sibling(0).shouldHave(text("1234567890"));
+        resultCellSelector.findBy(text("Date of Birth")).sibling(0).shouldHave(text("04 May,2014"));
+        resultCellSelector.findBy(text("Subjects")).sibling(0).shouldHave(text("Chemistry, Computer Science"));
+        resultCellSelector.findBy(text("Hobbies")).sibling(0).shouldNotBe(empty);
+        resultCellSelector.findBy(text("Picture")).sibling(0).shouldNotBe(empty);
+        resultCellSelector.findBy(text("Address")).sibling(0).shouldHave(text("17926 Eleanora Islands"));
+        resultCellSelector.findBy(text("State and City")).sibling(0).shouldNotBe(empty);
 
 //      sleep(600_000);
     }
